@@ -8,26 +8,9 @@
     tools:context=".MainActivity"
     android:background="@color/kuningMuda">
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Photo Diary App"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:padding="15sp"-->
-<!--        android:background="@color/kuning"-->
-<!--        />-->
-
-    <androidx.appcompat.widget.Toolbar
+    <include
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/kuning"
-        app:titleTextColor="@color/black"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        layout="@layout/toolbar"></include>
 
     <RelativeLayout
         android:layout_width="match_parent"
