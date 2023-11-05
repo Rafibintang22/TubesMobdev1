@@ -6,6 +6,15 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:clickable="true"
+        android:layout_marginBottom="12sp"></TextView>
+
+    <TextView
+        android:layout_below="@+id/btn_back"
         android:id="@+id/txt_tanggal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
