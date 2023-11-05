@@ -9,7 +9,6 @@ import com.example.tubes1.databinding.FragmentHomeBinding
 
 class FragmentHome : Fragment() {
     lateinit var binding: FragmentHomeBinding
-    val fragmentTambahKonten = FragmentTambahKonten()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,7 +19,7 @@ class FragmentHome : Fragment() {
 
         val buttonTambah = this.binding.btnTambah
         buttonTambah.setOnClickListener {
-            pindahkeFragment(this.fragmentTambahKonten)
+            pindahkeFragment(FragmentTambahKonten())
         }
 
         return this.binding.root

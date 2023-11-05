@@ -17,6 +17,19 @@ class FragmentTambahKonten : Fragment() {
     ): View? {
         this.binding = FragmentTambahKontenBinding.inflate(inflater, container, false)
 
+        val buttonBack = binding.btnBack
+        buttonBack.setOnClickListener {
+            pindahkeFragment(FragmentHome())
+        }
         return this.binding.root
+    }
+
+    fun pindahkeFragment(fragmentBaru : Fragment){
+        val mainActivity = activity as MainActivity
+
+        val fragmentTransaction = mainActivity.supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragmentBaru)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 }
