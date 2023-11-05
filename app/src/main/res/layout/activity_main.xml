@@ -8,16 +8,26 @@
     tools:context=".MainActivity"
     android:background="@color/kuningMuda">
 
-    <TextView
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Photo Diary App"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:padding="15sp"-->
+<!--        android:background="@color/kuning"-->
+<!--        />-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/photo_diary_app"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:padding="15sp"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/kuning"
-        />
+        app:titleTextColor="@color/black"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/fragment_container"
-            android:name="com.example.tubes1.FragmentHome">
+            android:name="com.example.tubes1.FragmentTambahKonten">
         </androidx.fragment.app.FragmentContainerView>
     </RelativeLayout>
 
