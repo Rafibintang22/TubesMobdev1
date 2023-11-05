@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt_tanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tanggal dibuat"
+        android:textColor="@color/biru"
+        android:textStyle="bold"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/txt_judulDiary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Judul Diary"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txt_tanggal"></TextView>
+
+    <ImageView
+        android:id="@+id/img_diary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
+        android:layout_below="@+id/txt_judulDiary"></ImageView>
+
+    <TextView
+        android:id="@+id/txt_storyDiary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Story Foto"
+        android:textColor="@color/black"
+        android:layout_below="@+id/img_diary"></TextView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/edit_icon_foreground"
+        android:backgroundTint="@color/kuning"/>
+
+</RelativeLayout>
