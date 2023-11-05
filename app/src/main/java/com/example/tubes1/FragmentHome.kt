@@ -9,6 +9,7 @@ import com.example.tubes1.databinding.FragmentHomeBinding
 
 class FragmentHome : Fragment() {
     lateinit var binding: FragmentHomeBinding
+    val fragmentTambahKonten = FragmentTambahKonten()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,6 +18,20 @@ class FragmentHome : Fragment() {
     ): View? {
         this.binding = FragmentHomeBinding.inflate(inflater,container, false)
 
+        val buttonTambah = this.binding.btnTambah
+        buttonTambah.setOnClickListener {
+            pindahkeFragment(this.fragmentTambahKonten)
+        }
+
         return this.binding.root
+    }
+
+    fun pindahkeFragment(fragmentBaru : Fragment){
+        val mainActivity = activity as MainActivity
+
+        val fragmentTransaction = mainActivity.supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragmentBaru)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 }

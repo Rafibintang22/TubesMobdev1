@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Photo Diary App"
+        android:text="@string/photo_diary_app"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textColor="@color/black"
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/fragment_container"
-            android:name="com.example.tubes1.FragmentTambahKonten">
+            android:name="com.example.tubes1.FragmentHome">
         </androidx.fragment.app.FragmentContainerView>
     </RelativeLayout>
 
