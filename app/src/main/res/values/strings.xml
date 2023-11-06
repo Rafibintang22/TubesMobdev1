@@ -9,4 +9,6 @@
     <string name="picture">Picture</string>
     <string name="back"><![CDATA[<< Back]]></string>
     <string name="photo_diary_app">Photo Diary App</string>
+    <string name="openDrawer">Open Drawer</string>
+    <string name="closeDrawer">Close Drawer</string>
 </resources>
