@@ -31,6 +31,11 @@ class FragmentTambahKonten : Fragment() {
             pindahkeFragment(FragmentHome())
         }
 
+        val buttonSave = binding.buttonSave
+        buttonSave.setOnClickListener {
+            pindahkeFragment(FragmentHome())
+        }
+
         val buttonUpload = binding.uploadButton
         val values = ContentValues()
         values.put(MediaStore.Images.Media.TITLE, "My Image")
