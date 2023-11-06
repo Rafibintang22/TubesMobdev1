@@ -26,7 +26,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_margin="16sp"
-        android:src="@drawable/plus2_button_foreground"
+        android:src="@drawable/plus_button_baseline_add"
         android:backgroundTint="@color/kuning"
+        app:shapeAppearance="@style/Widget.Material3.CircularProgressIndicator.Medium"
         ></com.google.android.material.floatingactionbutton.FloatingActionButton>
 </RelativeLayout>
