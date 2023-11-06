@@ -18,13 +18,16 @@
             android:clickable="true"
             android:layout_weight="1"></TextView>
 
-        <TextView
+        <Button
             android:id="@+id/button_save"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:backgroundTint="@color/biru"
             android:text="Save"
-            android:textAlignment="textEnd"></TextView>
+            android:drawableLeft="@drawable/save_button_baseline"
+            android:drawableTint="@color/white"
+            android:textColor="@color/white"
+            ></Button>
 
     </LinearLayout>
 
