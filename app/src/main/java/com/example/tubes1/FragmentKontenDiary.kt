@@ -22,8 +22,6 @@ class FragmentKontenDiary : Fragment() {
             pindahkeFragment(FragmentHome())
         }
         return this.binding.root
-
-        return this.binding.root
     }
 
     fun pindahkeFragment(fragmentBaru : Fragment){
