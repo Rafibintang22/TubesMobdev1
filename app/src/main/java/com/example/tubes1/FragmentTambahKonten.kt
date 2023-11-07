@@ -15,8 +15,9 @@ import androidx.fragment.app.Fragment
 import com.example.tubes1.databinding.FragmentTambahKontenBinding
 
 class FragmentTambahKonten : Fragment() {
-    lateinit var binding: FragmentTambahKontenBinding
-    lateinit var intentLauncher: ActivityResultLauncher<Intent>
+    private lateinit var binding: FragmentTambahKontenBinding
+    private lateinit var intentLauncher: ActivityResultLauncher<Intent>
+    private lateinit var viewModel: MainViewModel
     var imageUri: Uri? = null
 
     override fun onCreateView(
@@ -25,13 +26,11 @@ class FragmentTambahKonten : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         this.binding = FragmentTambahKontenBinding.inflate(inflater, container, false)
-
+        this.viewModel = (activity as MainActivity).viewModel
         val buttonBack = binding.btnBack
-        buttonBack.setOnClickListener {
-            pindahkeFragment(FragmentHome())
-        }
 
         val buttonUpload = binding.uploadButton
+        val saveBtn = binding.buttonSave
         val values = ContentValues()
         values.put(MediaStore.Images.Media.TITLE, "My Image")
         values.put(MediaStore.Images.Media.DESCRIPTION, "Image taken from my app")
@@ -49,7 +48,13 @@ class FragmentTambahKonten : Fragment() {
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
             this.intentLauncher.launch(takePictureIntent)
         }
-        
+
+        buttonBack.setOnClickListener {
+            pindahkeFragment(FragmentHome())
+        }
+        saveBtn.setOnClickListener{
+
+        }
         return this.binding.root
     }
 
