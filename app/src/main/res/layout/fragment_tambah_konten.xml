@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/btn_back"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/back"
-            android:clickable="true"
-            android:layout_marginBottom="12sp"></TextView>
+        android:backgroundTint="@color/biru"
+        android:text="Save"
+        android:drawableLeft="@drawable/save_button_baseline"
+        android:drawableTint="@color/white"
+        android:textColor="@color/white"
+        android:layout_marginBottom="12sp"></Button>
 
         <TextView
             android:id="@+id/txt_tambahDiary"
@@ -68,20 +67,7 @@
             android:id="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="20sp"
             android:layout_gravity="center"></ImageView>
-    </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/kuning"
-        android:src="@drawable/save_button_baseline"
-        app:shapeAppearance="@style/Widget.Material3.CircularProgressIndicator.Medium"
-        >
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-</RelativeLayout>
+</LinearLayout>

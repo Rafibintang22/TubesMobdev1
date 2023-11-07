@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="20sp">
+
+    <TextView
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textSize="15dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:padding="5sp"/>
+
+    <TextView
+        android:id="@+id/btn_addDiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Your Diary"
+        android:textSize="15dp"
+        android:layout_marginTop="40dp"
+        android:padding="5sp"
+        android:clickable="true"/>
+
+</LinearLayout>

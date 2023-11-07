@@ -26,8 +26,8 @@ class FragmentTambahKonten : Fragment() {
     ): View? {
         this.binding = FragmentTambahKontenBinding.inflate(inflater, container, false)
 
-        val buttonBack = binding.btnBack
-        buttonBack.setOnClickListener {
+        val buttonSave = binding.buttonSave
+        buttonSave.setOnClickListener {
             pindahkeFragment(FragmentHome())
         }
 
