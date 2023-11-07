@@ -1,4 +1,4 @@
-package com.example.tubes1
+package com.example.tubes1  
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,8 +21,6 @@ class FragmentKontenDiary : Fragment() {
         buttonBack.setOnClickListener {
             pindahkeFragment(FragmentHome())
         }
-        return this.binding.root
-
         return this.binding.root
     }
 
