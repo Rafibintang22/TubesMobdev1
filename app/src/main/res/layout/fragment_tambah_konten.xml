@@ -30,6 +30,7 @@
     </TextView>
 
     <EditText
+        android:id="@+id/title_diary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_the_title_of_the_diary"></EditText>
@@ -41,6 +42,7 @@
     </TextView>
 
     <EditText
+        android:id="@+id/desc_diary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Write your diary story"></EditText>
@@ -63,8 +65,9 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="wrap_content"
-        android:layout_height="500px"
-        android:layout_gravity="center"></ImageView>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="left"></ImageView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_save"

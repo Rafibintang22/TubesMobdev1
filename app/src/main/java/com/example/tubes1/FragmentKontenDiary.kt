@@ -9,18 +9,16 @@ import com.example.tubes1.databinding.FragmentKontenDiaryBinding
 
 class FragmentKontenDiary : Fragment() {
     lateinit var binding : FragmentKontenDiaryBinding
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        this.viewModel = (activity as MainActivity).viewModel
         this.binding = FragmentKontenDiaryBinding.inflate(inflater, container, false)
 
-        val buttonBack = binding.btnBack
-        buttonBack.setOnClickListener {
-            pindahkeFragment(FragmentHome())
-        }
         return this.binding.root
     }
 
