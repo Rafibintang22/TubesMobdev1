@@ -1,17 +1,23 @@
 package com.example.tubes1
 
+import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-    var page: MutableLiveData<Int> = MutableLiveData()
-    var message: MutableLiveData<String> = MutableLiveData()
+    var title: MutableLiveData<String> = MutableLiveData()
+    var story: MutableLiveData<String> = MutableLiveData()
+    var imgUri: MutableLiveData<Uri> = MutableLiveData()
 
-    fun updatePage(page: Int){
-        this.page.value = page
+    fun updateTitle(title: String){
+        this.title.value = title
     }
 
-    fun updateMessage(msg: String){
-        this.message.value = msg
+    fun updateMessage(story: String){
+        this.story.value = story
+    }
+
+    fun updateImgUri(uri: Uri){
+        this.imgUri.value = uri
     }
 }

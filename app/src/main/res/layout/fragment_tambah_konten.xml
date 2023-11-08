@@ -5,69 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:clickable="true"
+        android:layout_marginBottom="12sp"></TextView>
+
+    <TextView
+        android:id="@+id/txt_tambahDiary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add your diary"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="12sp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title">
+    </TextView>
+
+    <EditText
+        android:id="@+id/title_diary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_the_title_of_the_diary"></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/story">
+    </TextView>
+
+    <EditText
+        android:id="@+id/desc_diary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write your diary story"></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/picture">
+    </TextView>
+
     <Button
+        android:id="@+id/upload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Picture"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/kuning"></Button>
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="left"></ImageView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/biru"
-        android:text="Save"
-        android:drawableLeft="@drawable/save_button_baseline"
-        android:drawableTint="@color/white"
-        android:textColor="@color/white"
-        android:layout_marginBottom="12sp"></Button>
-
-        <TextView
-            android:id="@+id/txt_tambahDiary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add your diary"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginBottom="12sp"></TextView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title">
-        </TextView>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter_the_title_of_the_diary"></EditText>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/story">
-        </TextView>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Write your diary story"></EditText>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/picture">
-        </TextView>
-
-        <Button
-            android:id="@+id/upload_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upload Picture"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/kuning"></Button>
-
-
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20sp"
-            android:layout_gravity="center"></ImageView>
+        android:layout_gravity="right"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/kuning"
+        android:src="@drawable/save_button_baseline"
+        app:shapeAppearance="@style/Widget.Material3.CircularProgressIndicator.Medium"
+        >
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 </LinearLayout>

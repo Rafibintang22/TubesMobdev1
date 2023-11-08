@@ -10,14 +10,19 @@
         android:layout_height="wrap_content"
         android:text="@string/your_diary"
         android:textSize="25sp"
+        android:layout_marginBottom="30dp"
         android:textColor="@color/black"
-        android:textStyle="bold"></TextView>
+        android:textStyle="bold" />
 
-    <ListView
+    <GridView
         android:id="@+id/lv_diary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_judulHome"></ListView>
+        android:layout_below="@+id/txt_judulHome"
+        android:horizontalSpacing="6dp"
+        android:numColumns="2"
+        android:verticalSpacing="6dp"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_tambah"
@@ -25,9 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_margin="16sp"
-        android:src="@drawable/plus_button_baseline_add"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginBottom="16sp"
         android:backgroundTint="@color/kuning"
-        app:shapeAppearance="@style/Widget.Material3.CircularProgressIndicator.Medium"
-        ></com.google.android.material.floatingactionbutton.FloatingActionButton>
+        android:src="@drawable/plus_button_baseline_add"
+        app:shapeAppearance="@style/Widget.Material3.CircularProgressIndicator.Medium" />
 </RelativeLayout>

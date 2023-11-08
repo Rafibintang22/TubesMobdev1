@@ -12,11 +12,14 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.myapplication.DiaryListAdapter
 import com.example.tubes1.databinding.FragmentTambahKontenBinding
 
 class FragmentTambahKonten : Fragment() {
-    lateinit var binding: FragmentTambahKontenBinding
-    lateinit var intentLauncher: ActivityResultLauncher<Intent>
+    private lateinit var binding: FragmentTambahKontenBinding
+    private lateinit var intentLauncher: ActivityResultLauncher<Intent>
+    private lateinit var viewModel: MainViewModel
+    private lateinit var adapter: DiaryListAdapter
     var imageUri: Uri? = null
 
     override fun onCreateView(
@@ -25,13 +28,12 @@ class FragmentTambahKonten : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         this.binding = FragmentTambahKontenBinding.inflate(inflater, container, false)
-
-        val buttonSave = binding.buttonSave
-        buttonSave.setOnClickListener {
-            pindahkeFragment(FragmentHome())
-        }
+        this.viewModel = (activity as MainActivity).viewModel
+        this.adapter = (activity as MainActivity).adapter
+        val buttonBack = binding.btnBack
 
         val buttonUpload = binding.uploadButton
+        val saveBtn = binding.buttonSave
         val values = ContentValues()
         values.put(MediaStore.Images.Media.TITLE, "My Image")
         values.put(MediaStore.Images.Media.DESCRIPTION, "Image taken from my app")
@@ -41,6 +43,7 @@ class FragmentTambahKonten : Fragment() {
             ActivityResultContracts.StartActivityForResult()){ result ->
             if(result.resultCode == AppCompatActivity.RESULT_OK){
                 this.binding.image.setImageURI(imageUri)
+                this.viewModel.updateImgUri(imageUri!!)
             }
         }
 
@@ -49,7 +52,18 @@ class FragmentTambahKonten : Fragment() {
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
             this.intentLauncher.launch(takePictureIntent)
         }
-        
+
+        buttonBack.setOnClickListener {
+            pindahkeFragment(FragmentHome())
+        }
+        saveBtn.setOnClickListener{
+            val title = this.binding.titleDiary.text.toString()
+            val desc = this.binding.descDiary.text.toString()
+            if(title != "" && desc != "" && imageUri != null){
+                adapter.addImage(DiaryImage(title, desc, imageUri!!))
+                pindahkeFragment(FragmentHome())
+            }
+        }
         return this.binding.root
     }
 
