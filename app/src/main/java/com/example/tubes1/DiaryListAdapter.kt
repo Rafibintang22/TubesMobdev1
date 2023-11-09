@@ -1,19 +1,17 @@
 package com.example.myapplication
 
 import android.app.Dialog
-import android.os.Build
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import androidx.annotation.RequiresApi
 import com.example.tubes1.DiaryImage
 import com.example.tubes1.MainActivity
 import com.example.tubes1.R
 import com.example.tubes1.databinding.FragmentKontenDiaryBinding
 import com.github.chrisbanes.photoview.PhotoView
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
     private var images: MutableList<DiaryImage> = mutableListOf()
@@ -66,9 +64,10 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
 
                 val photoView: PhotoView = dialog.findViewById(R.id.photo_view)
                 photoView.setImageURI(img.getUri())
+                dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-                // Add additional settings for PhotoView if needed
-                 photoView.setMaximumScale(2.0f)
+                photoView.setMinimumScale(0.5f) // You can adjust the minimum scale as needed
+                photoView.setMaximumScale(2.0f)
                 dialog.show()
             }
         }
