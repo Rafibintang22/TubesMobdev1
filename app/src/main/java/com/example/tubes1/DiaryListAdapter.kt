@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.app.Dialog
 import android.os.Build
 import android.util.Log
 import android.view.View
@@ -8,7 +9,9 @@ import android.widget.BaseAdapter
 import androidx.annotation.RequiresApi
 import com.example.tubes1.DiaryImage
 import com.example.tubes1.MainActivity
+import com.example.tubes1.R
 import com.example.tubes1.databinding.FragmentKontenDiaryBinding
+import com.github.chrisbanes.photoview.PhotoView
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -33,7 +36,6 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
         return 0
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun getView(i: Int, view: View?, viewGroup: ViewGroup?): View {
         var view :View? = view
         val viewHolder: ViewHolder
@@ -58,18 +60,26 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
         private lateinit var img: DiaryImage
 
         init{
+            view.setOnClickListener{
+                val dialog = Dialog(activity)
+                dialog.setContentView(R.layout.popup_fragment)
+
+                val photoView: PhotoView = dialog.findViewById(R.id.photo_view)
+                photoView.setImageURI(img.getUri())
+
+                // Add additional settings for PhotoView if needed
+                 photoView.setMaximumScale(2.0f)
+                dialog.show()
+            }
         }
 
-        @RequiresApi(Build.VERSION_CODES.O)
         fun updateView(img: DiaryImage){
             this.img = img
             title.text = img.getTitle()
             desc.text = img.getDesc()
-            val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm")
-            val current = LocalDateTime.now().format(formatter)
-            tanggal.text = current.toString()
+            tanggal.text = img.getTime()
 
-            Log.d("test123", img.getDesc())
+            Log.d("test123", img.getUri().toString())
             image.setImageURI(img.getUri())
         }
     }
