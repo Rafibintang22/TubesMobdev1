@@ -22,6 +22,11 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
         notifyDataSetChanged()
     }
 
+    fun clearDiary(){
+        images = mutableListOf()
+        notifyDataSetChanged()
+    }
+
     override fun getCount(): Int {
         return images.size
     }
@@ -58,6 +63,9 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
         private lateinit var img: DiaryImage
 
         init{
+            //agar dialog tiap view tdk dapat dibuka beberapa kali sekaligus
+
+            var openDialog = 1
             view.setOnClickListener{
                 val dialog = Dialog(activity)
                 dialog.setContentView(R.layout.popup_fragment)
@@ -68,7 +76,15 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
 
                 photoView.setMinimumScale(0.5f) // You can adjust the minimum scale as needed
                 photoView.setMaximumScale(2.0f)
-                dialog.show()
+
+                dialog.setOnDismissListener{
+                    openDialog++
+                }
+
+                if(openDialog == 1){
+                    dialog.show()
+                    openDialog--
+                }
             }
         }
 
