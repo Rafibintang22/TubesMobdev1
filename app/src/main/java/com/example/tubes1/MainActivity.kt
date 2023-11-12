@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.binding = ActivityMainBinding.inflate(this.layoutInflater)
-        this.adapter = DiaryListAdapter(this)
         this.viewModel = MainViewModel()
+        this.adapter = DiaryListAdapter(this)
         this.sharedPref = getPreferences(MODE_PRIVATE)
         setContentView(this.binding.root)
         Log.d("test123", "sudah masuk")
