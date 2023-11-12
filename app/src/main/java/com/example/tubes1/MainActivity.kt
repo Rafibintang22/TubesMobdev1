@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.net.Uri
 import android.util.Log
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.example.myapplication.DiaryListAdapter
@@ -24,6 +25,14 @@ class MainActivity : AppCompatActivity() {
         this.sharedPref = getPreferences(MODE_PRIVATE)
         setContentView(this.binding.root)
         Log.d("test123", "sudah masuk")
+
+        val toolbar = this.binding.toolbar
+        this.setSupportActionBar(toolbar)
+
+        val drawer = this.binding.drawerLayout
+        val hamburger = ActionBarDrawerToggle(this, drawer,toolbar,R.string.openDrawer, R.string.closeDrawer)
+        drawer.addDrawerListener(hamburger)
+        hamburger.syncState()
 
         viewModel.page.observe(this,{
                 page: String -> changePage(page)
