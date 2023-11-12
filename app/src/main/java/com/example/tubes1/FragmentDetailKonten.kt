@@ -25,9 +25,13 @@ class FragmentDetailKonten : Fragment() {
 
         val editBtn = this.binding.btnEdit
         val backBtn = this.binding.btnBack
-        loadDetail()
-        editBtn.setOnClickListener{
 
+        viewModel.diaryImage.observe(viewLifecycleOwner,{
+                img: DiaryImage -> loadDetail(viewModel.diaryImage.value)
+        })
+
+        editBtn.setOnClickListener{
+            viewModel.updatePage("keEdit")
         }
 
         backBtn.setOnClickListener {
@@ -36,20 +40,12 @@ class FragmentDetailKonten : Fragment() {
         return this.binding.root
     }
 
-    fun pindahkeFragment(fragmentBaru : Fragment){
-        val mainActivity = activity as MainActivity
-
-        val fragmentTransaction = mainActivity.supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragmentBaru)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
-    }
-
-    fun loadDetail(){
-        this.binding.judulDetail.text = "Story Of " + viewModel.title.value
-        this.binding.storyDetail.text = viewModel.story.value
-        this.binding.dateCreated.text = "Created On " + viewModel.time.value
-        this.binding.imgDiary.setImageURI(viewModel.imgUri.value)
+    fun loadDetail(image: DiaryImage?){
+        val img = image!!
+        this.binding.judulDetail.text = "Story Of " + img.getTitle()
+        this.binding.storyDetail.text = img.getDesc()
+        this.binding.dateCreated.text = "Created On " + img.getTime()
+        this.binding.imgDiary.setImageURI(img.getUri())
         this.binding.imgDiary.setOnClickListener {
             lihatPhoto()
         }
@@ -61,7 +57,7 @@ class FragmentDetailKonten : Fragment() {
         dialog.setContentView(R.layout.popup_fragment)
 
         val photoView: PhotoView = dialog.findViewById(R.id.photo_view)
-        photoView.setImageURI(viewModel.imgUri.value)
+        photoView.setImageURI(viewModel.diaryImage.value!!.getUri())
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         photoView.setMinimumScale(0.5f) // You can adjust the minimum scale as needed

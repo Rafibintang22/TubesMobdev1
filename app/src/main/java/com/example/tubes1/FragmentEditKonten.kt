@@ -1,6 +1,8 @@
 package com.example.tubes1
 
 import android.os.Bundle
+import android.text.InputFilter
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,10 +19,34 @@ class FragmentEditKonten : Fragment() {
         this.binding = FragmentEditKontenBinding.inflate(inflater,container,false)
         this.viewModel = (activity as MainActivity).viewModel
         val view = this.binding.root
+        val back = this.binding.btnBack
         val update = this.binding.buttonUpdate
+
+        val maxLength = 18
+        val filters = arrayOf<InputFilter>(InputFilter.LengthFilter(maxLength))
+        this.binding.newTitle.filters = filters
+
         update.setOnClickListener{
-            pindahKeFragment(FragmentKontenDiary())
+            val title = this.binding.newTitle.text.toString()
+            val story = this.binding.newStory.text.toString()
+
+            Log.d("tesprint", title)
+            Log.d("tesprint", story)
+            if(title != ""){
+                viewModel.diaryImage.value!!.setTitle(title)
+            }
+
+            if(story != ""){
+                viewModel.diaryImage.value!!.setDesc(story)
+            }
+            viewModel.updatePage("Detail")
         }
+
+        back.setOnClickListener {
+            viewModel.updatePage("Detail")
+        }
+
+
         return view
     }
     fun pindahKeFragment(fragment: Fragment){

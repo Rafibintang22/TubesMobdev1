@@ -61,33 +61,13 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
         init{
             //agar dialog tiap view tdk dapat dibuka beberapa kali sekaligus
             view.setOnClickListener{
-                viewModel.updateTitle(img.getTitle())
-                viewModel.updateStory(img.getDesc())
-                viewModel.updateImgUri(img.getUri())
-                viewModel.updateTime(img.getTime())
+
+                viewModel.updateDiaryImg(img)
                 viewModel.updatePage("Detail")
+                viewModel.diaryImage.observe(activity, {
+                        img: DiaryImage -> notifyDataSetChanged()
+                })
             }
-//            var openDialog = 1
-//            view.setOnClickListener{
-//                val dialog = Dialog(activity)
-//                dialog.setContentView(R.layout.popup_fragment)
-//
-//                val photoView: PhotoView = dialog.findViewById(R.id.photo_view)
-//                photoView.setImageURI(img.getUri())
-//                dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-//
-//                photoView.setMinimumScale(0.5f) // You can adjust the minimum scale as needed
-//                photoView.setMaximumScale(2.0f)
-//
-//                dialog.setOnDismissListener{
-//                    openDialog++
-//                }
-//
-//                if(openDialog == 1){
-//                    dialog.show()
-//                    openDialog--
-//                }
-//            }
         }
 
         fun updateView(img: DiaryImage){
