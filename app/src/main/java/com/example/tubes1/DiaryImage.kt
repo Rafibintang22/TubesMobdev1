@@ -18,4 +18,13 @@ class DiaryImage(private var title: String, private var desc: String, private va
     fun getUri(): Uri{
         return this.uri
     }
+
+    fun setTitle(title: String){
+        this.title = title
+    }
+
+    fun setDesc(desc: String){
+        this.desc = desc
+    }
+
 }

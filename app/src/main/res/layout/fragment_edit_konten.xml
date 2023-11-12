@@ -16,63 +16,25 @@
             android:layout_height="wrap_content"
             android:text="@string/back"
             android:clickable="true"
-            android:layout_weight="1"></TextView>
+            android:layout_weight="1"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
 
     <TextView
         android:id="@+id/txt_editDiary"
-        android:layout_width="match_parent"
+        android:layout_width="0sp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:text="Edit your diary"
         android:textSize="25sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginBottom="12sp"></TextView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title">
-    </TextView>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_the_title_of_the_diary"></EditText>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/story">
-    </TextView>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Write your diary story"></EditText>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/picture">
-    </TextView>
-
-    <Button
-        android:id="@+id/upload_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload Picture"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/kuning"></Button>
-
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="20sp"
-        android:layout_gravity="center"></ImageView>
+        android:layout_marginBottom="12sp"/>
     <Button
         android:id="@+id/button_update"
         android:layout_width="wrap_content"
@@ -81,8 +43,34 @@
         android:backgroundTint="@color/biru"
         android:text="Update"
         android:textColor="@color/white"
-        android:drawableLeft="@drawable/update_button_baseline"
+        android:drawableLeft="@drawable/save_button_baseline"
         android:drawableTint="@color/white"
-        ></Button>
+        />
+    </LinearLayout>
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title">
+    </TextView>
+
+    <EditText
+        android:id="@+id/new_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter new Title or leave blank"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/story">
+    </TextView>
+
+    <EditText
+        android:id="@+id/new_story"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:hint="Write new Diary Story or leave blank"/>
 </LinearLayout>

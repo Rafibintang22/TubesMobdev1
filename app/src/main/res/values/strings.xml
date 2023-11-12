@@ -4,7 +4,7 @@
     <string name="judul">Judul</string>
     <string name="masukkan_judul_diary">Masukkan judul diary</string>
     <string name="title">Title</string>
-    <string name="enter_the_title_of_the_diary">Enter the title of the diary</string>
+    <string name="enter_the_title_of_the_diary">Enter the title of the diary (Max 18 char)</string>
     <string name="story">Story</string>
     <string name="picture">Picture</string>
     <string name="back"><![CDATA[<< Back]]></string>

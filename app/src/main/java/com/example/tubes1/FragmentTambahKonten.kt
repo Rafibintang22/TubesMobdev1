@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.text.InputFilter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -63,6 +64,11 @@ class FragmentTambahKonten : Fragment() {
         buttonBack.setOnClickListener {
             viewModel.updatePage("keHome")
         }
+
+        //max character
+        val maxLength = 18
+        val filters = arrayOf<InputFilter>(InputFilter.LengthFilter(maxLength))
+        this.binding.titleDiary.filters = filters
 
         saveBtn.setOnClickListener{
             val title = this.binding.titleDiary.text.toString()

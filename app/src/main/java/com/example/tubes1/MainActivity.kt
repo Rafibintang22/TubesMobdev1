@@ -56,6 +56,12 @@ class MainActivity : AppCompatActivity() {
                 addToBackStack(null)
             }
         }
+        else if(page == "keEdit"){
+            supportFragmentManager.commit {
+                replace<FragmentEditKonten>(R.id.fragment_container)
+                addToBackStack(null)
+            }
+        }
     }
 
     override fun onPause() {
@@ -98,5 +104,9 @@ class MainActivity : AppCompatActivity() {
 
             adapter.addImage(DiaryImage(title!!, desc!!, Uri.parse(uri), time!!))
         }
+    }
+
+    fun changeData(title: String, story: String, uri: Uri){
+
     }
 }
