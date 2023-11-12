@@ -60,13 +60,13 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
 
         init{
             //agar dialog tiap view tdk dapat dibuka beberapa kali sekaligus
-//            view.setOnClickListener{
-//                viewModel.updateTitle(img.getTitle())
-//                viewModel.updateStory(img.getDesc())
-//                viewModel.updateImgUri(img.getUri())
-//                viewModel.updateTime(img.getTime())
-//                viewModel.updatePage("Detail")
-//            }
+            view.setOnClickListener{
+                viewModel.updateTitle(img.getTitle())
+                viewModel.updateStory(img.getDesc())
+                viewModel.updateImgUri(img.getUri())
+                viewModel.updateTime(img.getTime())
+                viewModel.updatePage("Detail")
+            }
 //            var openDialog = 1
 //            view.setOnClickListener{
 //                val dialog = Dialog(activity)
