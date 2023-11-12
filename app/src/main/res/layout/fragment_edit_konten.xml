@@ -17,20 +17,6 @@
             android:text="@string/back"
             android:clickable="true"
             android:layout_weight="1"></TextView>
-
-
-
-        <Button
-            android:id="@+id/button_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/biru"
-            android:text="Update"
-            android:textColor="@color/white"
-            android:drawableLeft="@drawable/update_button_baseline"
-            android:drawableTint="@color/white"
-            ></Button>
-
     </LinearLayout>
 
     <TextView
@@ -83,8 +69,20 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="20sp"
         android:layout_gravity="center"></ImageView>
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:backgroundTint="@color/biru"
+        android:text="Update"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/update_button_baseline"
+        android:drawableTint="@color/white"
+        ></Button>
 
 </LinearLayout>

@@ -27,18 +27,18 @@ class FragmentHome : Fragment() {
 
 
         buttonTambah.setOnClickListener {
-            pindahkeFragment(FragmentTambahKonten())
+            viewModel.updatePage("keTambahKonten")
         }
 
         return this.binding.root
     }
 
-    fun pindahkeFragment(fragmentBaru : Fragment){
-        val mainActivity = activity as MainActivity
-
-        val fragmentTransaction = mainActivity.supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragmentBaru)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
-    }
+//    fun pindahkeFragment(fragmentBaru : Fragment){
+//        val mainActivity = activity as MainActivity
+//
+//        val fragmentTransaction = mainActivity.supportFragmentManager.beginTransaction()
+//        fragmentTransaction.replace(R.id.fragment_container, fragmentBaru)
+//        fragmentTransaction.addToBackStack(null)
+//        fragmentTransaction.commit()
+//    }
 }

@@ -16,14 +16,16 @@
     <TextView
         android:layout_below="@+id/btn_back"
         android:id="@+id/txt_tanggal"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="tanggal dibuat"
         android:textColor="@color/biru"
         android:textStyle="bold"
         />
 
     <TextView
+        android:layout_gravity="center"
         android:id="@+id/txt_judulDiary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,16 +36,16 @@
 
     <ImageView
         android:id="@+id/img_diary"
-        android:layout_gravity="left"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="800px"/>
 
-    <TextView
-        android:id="@+id/txt_storyDiary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Story Foto"
-        android:textColor="@color/black" />
+<!--    <TextView-->
+<!--        android:id="@+id/txt_storyDiary"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Story Foto"-->
+<!--        android:textColor="@color/black" />-->
 
 <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
 <!--        android:id="@+id/btn_edit"-->

@@ -1,19 +1,15 @@
 package com.example.myapplication
 
-import android.app.Dialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.tubes1.DiaryImage
 import com.example.tubes1.MainActivity
-import com.example.tubes1.R
 import com.example.tubes1.databinding.FragmentKontenDiaryBinding
-import com.github.chrisbanes.photoview.PhotoView
 
 class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
+    private val viewModel = activity.viewModel
     private var images: MutableList<DiaryImage> = mutableListOf()
     lateinit var binding: FragmentKontenDiaryBinding
 
@@ -57,41 +53,47 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
 
     private inner class ViewHolder(view: View){
         val title = binding.txtJudulDiary
-        val desc = binding.txtStoryDiary
+//        val desc = binding.txtStoryDiary
         val tanggal = binding.txtTanggal
         val image = binding.imgDiary
         private lateinit var img: DiaryImage
 
         init{
             //agar dialog tiap view tdk dapat dibuka beberapa kali sekaligus
-
-            var openDialog = 1
-            view.setOnClickListener{
-                val dialog = Dialog(activity)
-                dialog.setContentView(R.layout.popup_fragment)
-
-                val photoView: PhotoView = dialog.findViewById(R.id.photo_view)
-                photoView.setImageURI(img.getUri())
-                dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-                photoView.setMinimumScale(0.5f) // You can adjust the minimum scale as needed
-                photoView.setMaximumScale(2.0f)
-
-                dialog.setOnDismissListener{
-                    openDialog++
-                }
-
-                if(openDialog == 1){
-                    dialog.show()
-                    openDialog--
-                }
-            }
+//            view.setOnClickListener{
+//                viewModel.updateTitle(img.getTitle())
+//                viewModel.updateStory(img.getDesc())
+//                viewModel.updateImgUri(img.getUri())
+//                viewModel.updateTime(img.getTime())
+//                viewModel.updatePage("Detail")
+//            }
+//            var openDialog = 1
+//            view.setOnClickListener{
+//                val dialog = Dialog(activity)
+//                dialog.setContentView(R.layout.popup_fragment)
+//
+//                val photoView: PhotoView = dialog.findViewById(R.id.photo_view)
+//                photoView.setImageURI(img.getUri())
+//                dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//
+//                photoView.setMinimumScale(0.5f) // You can adjust the minimum scale as needed
+//                photoView.setMaximumScale(2.0f)
+//
+//                dialog.setOnDismissListener{
+//                    openDialog++
+//                }
+//
+//                if(openDialog == 1){
+//                    dialog.show()
+//                    openDialog--
+//                }
+//            }
         }
 
         fun updateView(img: DiaryImage){
             this.img = img
             title.text = img.getTitle()
-            desc.text = img.getDesc()
+//            desc.text = img.getDesc()
             tanggal.text = img.getTime()
 
             Log.d("test123", img.getUri().toString())

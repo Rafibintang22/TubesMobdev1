@@ -51,7 +51,6 @@ class FragmentTambahKonten : Fragment() {
             Log.d("test123", imageUri.toString())
             if(result.resultCode == AppCompatActivity.RESULT_OK){
                 this.binding.image.setImageURI(imageUri)
-                this.viewModel.updateImgUri(imageUri!!)
             }
         }
 
@@ -62,7 +61,7 @@ class FragmentTambahKonten : Fragment() {
         }
 
         buttonBack.setOnClickListener {
-            pindahkeFragment(FragmentHome())
+            viewModel.updatePage("keHome")
         }
 
         saveBtn.setOnClickListener{
@@ -72,18 +71,9 @@ class FragmentTambahKonten : Fragment() {
             val current = LocalDateTime.now().format(formatter)
             if(title != "" && desc != "" && imageUri != null){
                 adapter.addImage(DiaryImage(title, desc, imageUri!!, current.toString()))
-                pindahkeFragment(FragmentHome())
+                viewModel.updatePage("keHome")
             }
         }
         return this.binding.root
-    }
-
-    fun pindahkeFragment(fragmentBaru : Fragment){
-        val mainActivity = activity as MainActivity
-
-        val fragmentTransaction = mainActivity.supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragmentBaru)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
     }
 }

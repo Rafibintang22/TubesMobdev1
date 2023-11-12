@@ -42,22 +42,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/fragment_container"
-                android:name="com.example.tubes1.FragmentHome">
+                android:name="com.example.tubes1.FragmentHome"
+                >
             </androidx.fragment.app.FragmentContainerView>
         </RelativeLayout>
     </LinearLayout>
 
 <!--    Left Drawer-->
-    <RelativeLayout
-        android:id="@+id/left_drawer"
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start" >
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragment_container_left"
-            android:name="com.example.tubes1.FragmentSideMenu"></fragment>
-    </RelativeLayout>
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/left_drawer"-->
+<!--        android:layout_width="240dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start" >-->
+<!--        <fragment-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:id="@+id/fragment_container_left"-->
+<!--            android:name="com.example.tubes1.FragmentSideMenu"></fragment>-->
+<!--    </RelativeLayout>-->
 
 </androidx.drawerlayout.widget.DrawerLayout>

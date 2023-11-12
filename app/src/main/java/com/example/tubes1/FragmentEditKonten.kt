@@ -9,11 +9,13 @@ import com.example.tubes1.databinding.FragmentEditKontenBinding
 
 class FragmentEditKonten : Fragment() {
     lateinit var binding: FragmentEditKontenBinding
+    private lateinit var viewModel: MainViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentEditKontenBinding.inflate(inflater,container,false)
+        this.binding = FragmentEditKontenBinding.inflate(inflater,container,false)
+        this.viewModel = (activity as MainActivity).viewModel
         val view = this.binding.root
         val update = this.binding.buttonUpdate
         update.setOnClickListener{
@@ -28,5 +30,4 @@ class FragmentEditKonten : Fragment() {
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
-
 }
