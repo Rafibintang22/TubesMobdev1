@@ -31,6 +31,9 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="TextColorAccent">
+        <item name="android:textColor">@color/biru</item>
+    </style>
 
 
 

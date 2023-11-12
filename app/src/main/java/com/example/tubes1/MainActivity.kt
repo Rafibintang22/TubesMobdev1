@@ -40,9 +40,9 @@ class MainActivity : AppCompatActivity() {
                 page: String -> changePage(page)
         })
 
-        viewModel.mode.observe(this,{
-                mode: Boolean -> changeMode(mode)
-        })
+//        viewModel.mode.observe(this,{
+//                mode: Boolean -> changeMode(mode)
+//        })
     }
 
     private fun changeMode(mode : Boolean){

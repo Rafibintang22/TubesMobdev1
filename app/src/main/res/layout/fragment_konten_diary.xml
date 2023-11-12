@@ -14,6 +14,16 @@
 <!--        android:layout_marginBottom="12sp"/>-->
 
     <TextView
+        android:layout_gravity="center"
+        android:id="@+id/txt_judulDiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Judul Diary"
+        style="@style/TextColor"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <TextView
         android:layout_below="@+id/btn_back"
         android:id="@+id/txt_tanggal"
         android:layout_width="wrap_content"
@@ -23,16 +33,6 @@
         style="@style/TextColorAccent"
         android:textStyle="bold"
         />
-
-    <TextView
-        android:layout_gravity="center"
-        android:id="@+id/txt_judulDiary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Judul Diary"
-        style="@style/TextColor"
-        android:textSize="16sp"
-        android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/img_diary"

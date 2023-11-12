@@ -11,7 +11,7 @@ import kotlin.math.log
 
 class FragmentSideMenu:Fragment() {
     lateinit var binding: FragmentSidemenuBinding
-    private lateinit var viewModel: MainViewModel
+//    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,19 +19,19 @@ class FragmentSideMenu:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         this.binding = FragmentSidemenuBinding.inflate(inflater,container,false)
-        this.viewModel = (activity as MainActivity).viewModel
+//        this.viewModel = (activity as MainActivity).viewModel
         val buttonHome = binding.btnHome
         val buttonAddDiary = binding.btnAddDiary
         val switchMode = binding.switchMode
 
-        switchMode.setOnClickListener {
-            val modeNow = switchMode.isActivated
-            if(modeNow == false){
-                viewModel.updateMode(false)
-            }else{
-                viewModel.updateMode(true)
-            }
-        }
+//        switchMode.setOnClickListener {
+//            val modeNow = switchMode.isActivated
+//            if(modeNow == false){
+//                viewModel.updateMode(false)
+//            }else{
+//                viewModel.updateMode(true)
+//            }
+//        }
 
         buttonHome.setOnClickListener {
             pindahkeFragment(FragmentHome())

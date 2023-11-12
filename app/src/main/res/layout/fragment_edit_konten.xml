@@ -36,6 +36,7 @@
     </TextView>
 
     <EditText
+        android:id="@+id/newTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_the_title_of_the_diary"></EditText>
@@ -47,6 +48,7 @@
     </TextView>
 
     <EditText
+        android:id="@+id/newStory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Write your diary story"></EditText>
