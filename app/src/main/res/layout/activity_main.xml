@@ -7,8 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/kuningMuda">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +19,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/kuning"
+            style="@style/ToolbarBackground"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Light">
 
@@ -29,8 +28,7 @@
                 android:layout_height="wrap_content"
                 android:text="Photo Diary App"
                 android:textSize="20sp"
-                android:textColor="@color/black"
-                android:background="@color/kuning"
+                style="@style/TextColor"
                 />
         </androidx.appcompat.widget.Toolbar>
 

@@ -2,8 +2,36 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.TUBES1" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/kuning</item>
+        <item name="colorPrimaryVariant">@color/kuningMuda</item>
+
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorAccent">@color/biru</item>
     </style>
 
     <style name="Theme.TUBES1" parent="Base.Theme.TUBES1" />
+    
+    <style name="Screen">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="ToolbarBackground">
+        <item name="android:background">@color/kuning</item>
+    </style>
+
+    <style name="BtnBackground">
+        <item name="android:backgroundTint">@color/kuning</item>
+    </style>
+
+    <style name="SideBackground">
+        <item name="android:background">@color/kuningMuda</item>
+    </style>
+
+    <style name="TextColor">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+
+
 </resources>

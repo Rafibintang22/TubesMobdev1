@@ -10,6 +10,7 @@ class MainViewModel : ViewModel() {
     var imgUri: MutableLiveData<Uri> = MutableLiveData()
     var time: MutableLiveData<String> = MutableLiveData()
     var page: MutableLiveData<String> = MutableLiveData()
+    var mode: MutableLiveData<Boolean> = MutableLiveData()
 
     fun updateTitle(title: String){
         this.title.value = title
@@ -29,6 +30,10 @@ class MainViewModel : ViewModel() {
 
     fun updatePage(page: String){
         this.page.value = page
+    }
+
+    fun updateMode(mode: Boolean){
+        this.mode.value = mode
     }
 
 }

@@ -5,4 +5,9 @@
     <color name="kuning">#FFD54F</color>
     <color name="kuningMuda">#FFFDE7</color>
     <color name="biru">#2196F3</color>
+
+    <color name="grey">#4E4E4E</color>
+    <color name="lightgrey">#939292</color>
+    <color name="kuningDark">#827717</color>
+    <color name="biruDark">#0D47A1</color>
 </resources>

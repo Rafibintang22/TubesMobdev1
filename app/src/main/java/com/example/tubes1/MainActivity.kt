@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.net.Uri
 import android.util.Log
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.example.myapplication.DiaryListAdapter
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: MainViewModel
     lateinit var adapter: DiaryListAdapter
     lateinit var sharedPref: SharedPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +39,18 @@ class MainActivity : AppCompatActivity() {
         viewModel.page.observe(this,{
                 page: String -> changePage(page)
         })
+
+        viewModel.mode.observe(this,{
+                mode: Boolean -> changeMode(mode)
+        })
+    }
+
+    private fun changeMode(mode : Boolean){
+        if (mode == false){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
     }
 
     private fun changePage(page: String) {

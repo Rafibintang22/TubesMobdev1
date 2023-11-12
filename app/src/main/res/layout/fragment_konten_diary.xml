@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="tanggal dibuat"
-        android:textColor="@color/biru"
+        style="@style/TextColorAccent"
         android:textStyle="bold"
         />
 
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Judul Diary"
-        android:textColor="@color/black"
+        style="@style/TextColor"
         android:textSize="16sp"
         android:textStyle="bold"/>
 
