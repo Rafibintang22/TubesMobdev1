@@ -119,8 +119,4 @@ class MainActivity : AppCompatActivity() {
             adapter.addImage(DiaryImage(title!!, desc!!, Uri.parse(uri), time!!))
         }
     }
-
-    fun changeData(title: String, story: String, uri: Uri){
-
-    }
 }

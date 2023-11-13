@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import com.example.tubes1.databinding.FragmentDetailKontenBinding
 import com.github.chrisbanes.photoview.PhotoView
@@ -25,6 +26,7 @@ class FragmentDetailKonten : Fragment() {
 
         val editBtn = this.binding.btnEdit
         val backBtn = this.binding.btnBack
+        val delBtn = this.binding.delBtn
 
         viewModel.diaryImage.observe(viewLifecycleOwner,{
                 img: DiaryImage -> loadDetail(viewModel.diaryImage.value)
@@ -36,6 +38,10 @@ class FragmentDetailKonten : Fragment() {
 
         backBtn.setOnClickListener {
             viewModel.updatePage("keHome")
+        }
+
+        delBtn.setOnClickListener{
+            (activity as MainActivity).adapter.delImage(viewModel.diaryImage.value!!)
         }
         return this.binding.root
     }
@@ -57,6 +63,7 @@ class FragmentDetailKonten : Fragment() {
         dialog.setContentView(R.layout.popup_fragment)
 
         val photoView: PhotoView = dialog.findViewById(R.id.photo_view)
+        val closeBtn: ImageButton = dialog.findViewById(R.id.btn_close)
         photoView.setImageURI(viewModel.diaryImage.value!!.getUri())
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -65,6 +72,10 @@ class FragmentDetailKonten : Fragment() {
 
         dialog.setOnDismissListener{
             openDialog++
+        }
+
+        closeBtn.setOnClickListener{
+            dialog.dismiss()
         }
 
         if(openDialog == 1){

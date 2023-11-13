@@ -17,6 +17,10 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
         images.add(img)
         notifyDataSetChanged()
     }
+    fun delImage(img: DiaryImage){
+        images.remove(img)
+        notifyDataSetChanged()
+    }
 
     fun clearDiary(){
         images = mutableListOf()
