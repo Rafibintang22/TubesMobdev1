@@ -27,4 +27,9 @@ class DiaryImage(private var title: String, private var desc: String, private va
         this.desc = desc
     }
 
+    fun setUri(uri: Uri?){
+        if (uri != null) {
+            this.uri = uri
+        }
+    }
 }
