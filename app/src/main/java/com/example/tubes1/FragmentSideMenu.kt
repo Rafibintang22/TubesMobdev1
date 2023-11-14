@@ -30,13 +30,14 @@ class FragmentSideMenu:Fragment() {
         }
 
         buttonHome.setOnClickListener {
+            viewModel.reqCloseDrawer(true)
             pindahkeFragment(FragmentHome())
         }
 
         buttonAddDiary.setOnClickListener {
+            viewModel.reqCloseDrawer(true)
             pindahkeFragment(FragmentTambahKonten())
         }
-
 
 
         return this.binding.root

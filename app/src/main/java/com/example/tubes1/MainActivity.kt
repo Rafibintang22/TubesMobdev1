@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity() {
         viewModel.mode.observe(this,{
                 mode: Boolean -> changeMode(mode)
         })
+
+        viewModel.closeDrawer.observe(this, {
+            binding.drawerLayout.closeDrawers()
+        })
     }
 
     private fun changeMode(mode : Boolean){
