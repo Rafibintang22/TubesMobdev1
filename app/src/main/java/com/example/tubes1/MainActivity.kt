@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.binding = ActivityMainBinding.inflate(this.layoutInflater)
         this.viewModel = MainViewModel()
+        this.binding = ActivityMainBinding.inflate(this.layoutInflater)
         this.adapter = DiaryListAdapter(this)
         this.sharedPref = getPreferences(MODE_PRIVATE)
         setContentView(this.binding.root)
@@ -40,12 +40,13 @@ class MainActivity : AppCompatActivity() {
                 page: String -> changePage(page)
         })
 
-//        viewModel.mode.observe(this,{
-//                mode: Boolean -> changeMode(mode)
-//        })
+        viewModel.mode.observe(this,{
+                mode: Boolean -> changeMode(mode)
+        })
     }
 
     private fun changeMode(mode : Boolean){
+        Log.d("tesmode", mode.toString())
         if (mode == false){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }else{

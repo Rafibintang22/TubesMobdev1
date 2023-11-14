@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Switch
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.tubes1.databinding.FragmentSidemenuBinding
@@ -11,7 +12,7 @@ import kotlin.math.log
 
 class FragmentSideMenu:Fragment() {
     lateinit var binding: FragmentSidemenuBinding
-//    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,19 +20,14 @@ class FragmentSideMenu:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         this.binding = FragmentSidemenuBinding.inflate(inflater,container,false)
-//        this.viewModel = (activity as MainActivity).viewModel
+        this.viewModel = (activity as MainActivity).viewModel
         val buttonHome = binding.btnHome
         val buttonAddDiary = binding.btnAddDiary
         val switchMode = binding.switchMode
-
-//        switchMode.setOnClickListener {
-//            val modeNow = switchMode.isActivated
-//            if(modeNow == false){
-//                viewModel.updateMode(false)
-//            }else{
-//                viewModel.updateMode(true)
-//            }
-//        }
+        switchMode.setOnClickListener {
+            val modeNow = switchMode.isChecked
+            viewModel.updateMode(modeNow)
+        }
 
         buttonHome.setOnClickListener {
             pindahkeFragment(FragmentHome())
