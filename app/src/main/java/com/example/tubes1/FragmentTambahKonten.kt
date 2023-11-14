@@ -41,10 +41,6 @@ class FragmentTambahKonten : Fragment() {
 
         val buttonUpload = binding.uploadButton
         val saveBtn = binding.buttonSave
-        val values = ContentValues()
-        values.put(MediaStore.Images.Media.TITLE, "My Image")
-        values.put(MediaStore.Images.Media.DESCRIPTION, "Image taken from my app")
-        this.imageUri = requireActivity().contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
 
         this.intentLauncher = this.registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()){ result ->
@@ -56,6 +52,11 @@ class FragmentTambahKonten : Fragment() {
         }
 
         buttonUpload.setOnClickListener{
+            val values = ContentValues()
+            values.put(MediaStore.Images.Media.TITLE, "My Image")
+            values.put(MediaStore.Images.Media.DESCRIPTION, "Image taken from my app")
+            this.imageUri = requireActivity().contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
             this.intentLauncher.launch(takePictureIntent)

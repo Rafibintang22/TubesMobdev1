@@ -11,6 +11,7 @@ import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import com.example.tubes1.databinding.FragmentDetailKontenBinding
 import com.github.chrisbanes.photoview.PhotoView
+import com.google.android.material.snackbar.Snackbar
 
 class FragmentDetailKonten : Fragment() {
     lateinit var binding : FragmentDetailKontenBinding
@@ -42,10 +43,17 @@ class FragmentDetailKonten : Fragment() {
 
         delBtn.setOnClickListener{
             (activity as MainActivity).adapter.delImage(viewModel.diaryImage.value!!)
+            viewModel.updatePage("keHome")
+
+            val message = "Diary '${viewModel.diaryImage.value!!.getTitle()}' berhasil dihapus"
+            showSnackbar(message)
         }
         return this.binding.root
     }
 
+    private fun showSnackbar(message: String) {
+        Snackbar.make(requireView(), message, Snackbar.LENGTH_SHORT).show()
+    }
     fun loadDetail(image: DiaryImage?){
         val img = image!!
         this.binding.judulDetail.text = "Story Of " + img.getTitle()
