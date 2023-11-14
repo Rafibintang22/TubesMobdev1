@@ -35,7 +35,7 @@ class FragmentEditKonten : Fragment() {
         val maxLength = 18
         val filters = arrayOf<InputFilter>(InputFilter.LengthFilter(maxLength))
         this.binding.newTitle.filters = filters
-        val buttonUpload = binding.uploadButton
+//        val buttonUpload = binding.uploadButton
 
         update.setOnClickListener{
             val title = this.binding.newTitle.text.toString()
@@ -61,27 +61,27 @@ class FragmentEditKonten : Fragment() {
         }
 
 
-        this.intentLauncher = this.registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()){ result ->
-            Log.d("tesprin", result.resultCode.toString())
-            Log.d("tesprin", imageUri.toString())
-            if(result.resultCode == AppCompatActivity.RESULT_OK){
-                this.binding.image.setImageURI(imageUri)
-            } else{
-                imageUri = null
-            }
-        }
-
-        buttonUpload.setOnClickListener{
-            val values = ContentValues()
-            values.put(MediaStore.Images.Media.TITLE, "My Image")
-            values.put(MediaStore.Images.Media.DESCRIPTION, "Image taken from my app")
-            this.imageUri = requireActivity().contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-
-            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-            this.intentLauncher.launch(takePictureIntent)
-        }
+//        this.intentLauncher = this.registerForActivityResult(
+//            ActivityResultContracts.StartActivityForResult()){ result ->
+//            Log.d("tesprin", result.resultCode.toString())
+//            Log.d("tesprin", imageUri.toString())
+//            if(result.resultCode == AppCompatActivity.RESULT_OK){
+//                this.binding.image.setImageURI(imageUri)
+//            } else{
+//                imageUri = null
+//            }
+//        }
+//
+//        buttonUpload.setOnClickListener{
+//            val values = ContentValues()
+//            values.put(MediaStore.Images.Media.TITLE, "My Image")
+//            values.put(MediaStore.Images.Media.DESCRIPTION, "Image taken from my app")
+//            this.imageUri = requireActivity().contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+//
+//            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+//            this.intentLauncher.launch(takePictureIntent)
+//        }
 
         back.setOnClickListener {
             viewModel.updatePage("Detail")

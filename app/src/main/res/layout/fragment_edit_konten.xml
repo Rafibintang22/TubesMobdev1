@@ -59,27 +59,27 @@
             ></EditText>
     </ScrollView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/picture">
-    </TextView>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/picture">-->
+<!--    </TextView>-->
 
-    <Button
-        android:id="@+id/upload_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload Picture"
-        style="@style/BtnBackground"></Button>
+<!--    <Button-->
+<!--        android:id="@+id/upload_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Upload Picture"-->
+<!--        style="@style/BtnBackground"></Button>-->
 
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="20sp"
-        android:layout_gravity="center"></ImageView>
+<!--    <ImageView-->
+<!--        android:id="@+id/image"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:padding="20sp"-->
+<!--        android:layout_gravity="center"></ImageView>-->
     <Button
         android:id="@+id/button_update"
         android:layout_width="wrap_content"

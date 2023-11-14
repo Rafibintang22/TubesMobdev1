@@ -13,11 +13,6 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
     private var images: MutableList<DiaryImage> = mutableListOf()
     lateinit var binding: FragmentKontenDiaryBinding
 
-    init{
-        viewModel.diaryImage.observe(activity, {
-                img: DiaryImage -> notifyDataSetChanged()
-        })
-    }
     fun addImage(img: DiaryImage){
         images.add(img)
         notifyDataSetChanged()
@@ -81,7 +76,7 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
             title.text = img.getTitle()
 //            desc.text = img.getDesc()
             tanggal.text = img.getTime()
-
+            Log.d("tesprintURI", img.getUri().toString())
             image.setImageURI(img.getUri())
         }
     }
