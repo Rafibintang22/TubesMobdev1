@@ -18,6 +18,9 @@
             android:id="@+id/btn_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/home_button"
             android:text="Home"
             android:textSize="15dp"
             android:layout_marginTop="30dp"
@@ -28,8 +31,11 @@
             android:id="@+id/btn_addDiary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/add_button"
+            android:drawablePadding="5dp"
             android:text="Add Your Diary"
             android:textSize="15dp"
+            android:gravity="center_vertical"
             android:layout_marginTop="40dp"
             android:padding="5sp"
             android:clickable="true" />
@@ -44,8 +50,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/dark_mode_toggle"
+                android:drawablePadding="5dp"
                 android:text="@string/dark_mode"
-                android:layout_marginRight="60dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="40dp"
                 android:textSize="15dp"/>
 
             <androidx.appcompat.widget.SwitchCompat
