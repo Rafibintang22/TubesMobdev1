@@ -15,6 +15,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tubes1.databinding.FragmentEditKontenBinding
+import com.google.android.material.snackbar.Snackbar
 
 class FragmentEditKonten : Fragment() {
     lateinit var binding: FragmentEditKontenBinding
@@ -42,6 +43,7 @@ class FragmentEditKonten : Fragment() {
 
             Log.d("tesprint", title)
             Log.d("tesprint", story)
+
             if(title != ""){
                 viewModel.diaryImage.value!!.setTitle(title)
             }
@@ -51,17 +53,22 @@ class FragmentEditKonten : Fragment() {
             }
 
             // Perbarui properti imageUri pada DiaryImage
-            viewModel.diaryImage.value?.setUri(this.imageUri)
-
+            viewModel.diaryImage.value!!.setUri(this.imageUri)
             viewModel.updatePage("Detail")
+
+            val message = "Diary '${viewModel.diaryImage.value!!.getTitle()}' berhasil diedit"
+            showSnackbar(message)
         }
+
 
         this.intentLauncher = this.registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()){ result ->
-            Log.d("test123", result.resultCode.toString())
-            Log.d("test123", imageUri.toString())
+            Log.d("tesprin", result.resultCode.toString())
+            Log.d("tesprin", imageUri.toString())
             if(result.resultCode == AppCompatActivity.RESULT_OK){
                 this.binding.image.setImageURI(imageUri)
+            } else{
+                imageUri = null
             }
         }
 
@@ -83,11 +90,7 @@ class FragmentEditKonten : Fragment() {
 
         return view
     }
-    fun pindahKeFragment(fragment: Fragment){
-        val mainActivity = activity as MainActivity
-        val fragmentTransaction = mainActivity.supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
+    private fun showSnackbar(message: String) {
+        Snackbar.make(requireView(), message, Snackbar.LENGTH_SHORT).show()
     }
 }

@@ -13,6 +13,11 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
     private var images: MutableList<DiaryImage> = mutableListOf()
     lateinit var binding: FragmentKontenDiaryBinding
 
+    init{
+        viewModel.diaryImage.observe(activity, {
+                img: DiaryImage -> notifyDataSetChanged()
+        })
+    }
     fun addImage(img: DiaryImage){
         images.add(img)
         notifyDataSetChanged()
@@ -63,14 +68,11 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
         private lateinit var img: DiaryImage
 
         init{
-            //agar dialog tiap view tdk dapat dibuka beberapa kali sekaligus
             view.setOnClickListener{
 
                 viewModel.updateDiaryImg(img)
                 viewModel.updatePage("Detail")
-                viewModel.diaryImage.observe(activity, {
-                        img: DiaryImage -> notifyDataSetChanged()
-                })
+
             }
         }
 
@@ -80,7 +82,6 @@ class DiaryListAdapter(private val activity: MainActivity) : BaseAdapter() {
 //            desc.text = img.getDesc()
             tanggal.text = img.getTime()
 
-            Log.d("test123", img.getUri().toString())
             image.setImageURI(img.getUri())
         }
     }

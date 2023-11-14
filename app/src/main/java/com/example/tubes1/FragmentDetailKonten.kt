@@ -75,7 +75,7 @@ class FragmentDetailKonten : Fragment() {
         photoView.setImageURI(viewModel.diaryImage.value!!.getUri())
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        photoView.setMinimumScale(0.5f) // You can adjust the minimum scale as needed
+        photoView.setMinimumScale(0.5f)
         photoView.setMaximumScale(2.0f)
 
         dialog.setOnDismissListener{

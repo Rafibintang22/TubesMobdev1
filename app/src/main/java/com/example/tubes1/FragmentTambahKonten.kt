@@ -44,10 +44,10 @@ class FragmentTambahKonten : Fragment() {
 
         this.intentLauncher = this.registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()){ result ->
-            Log.d("test123", result.resultCode.toString())
-            Log.d("test123", imageUri.toString())
             if(result.resultCode == AppCompatActivity.RESULT_OK){
                 this.binding.image.setImageURI(imageUri)
+            } else{
+                imageUri = null
             }
         }
 

@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapter: DiaryListAdapter
     lateinit var sharedPref: SharedPreferences
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.viewModel = MainViewModel()
@@ -50,12 +49,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun changeMode(mode : Boolean){
-        Log.d("tesmode", mode.toString())
+
         if (mode == false){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }else{
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
+
+        changePage("keHome")
     }
 
     private fun changePage(page: String) {
