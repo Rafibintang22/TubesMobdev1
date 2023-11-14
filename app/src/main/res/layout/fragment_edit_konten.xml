@@ -47,11 +47,17 @@
         android:text="@string/story">
     </TextView>
 
-    <EditText
-        android:id="@+id/newStory"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Write your diary story"></EditText>
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/newStory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write your diary story"
+            android:maxLines="10"
+            ></EditText>
+    </ScrollView>
 
     <TextView
         android:layout_width="match_parent"
